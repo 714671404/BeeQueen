@@ -1,5 +1,5 @@
 <template>
-    <h1 class="todo-title">{{ todo }}</h1>
+    <h1 class="todo-title">{{ todo.title }}</h1>
 </template>
 
 <script>
@@ -11,9 +11,9 @@
         }),
         mounted()
         {
-            axios.get('api/todo/' + this.$route.params.id).then(response => {
+            axios.get('/api/todo/' + this.$route.params.id).then(response => {
                 console.log(response)
-                // this.todo = response.data
+                this.todo = response.data
             })
         }
     }

@@ -28,6 +28,5 @@ Route::patch('todo/update/{id}', function ($id) {
     return $todo;
 });
 Route::get('todo/{id}', function ($id) {
-    return $id;
     return \App\User::find($id);
 });
